@@ -1,2 +1,2 @@
 # gclovekyy.github.io
-gift for my love
+https://gclovekyy.github.io/
