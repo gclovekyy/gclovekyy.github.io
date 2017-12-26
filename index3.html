@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Words to you</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">我的爱人</span><br />
+				<span class="space comments">这一生最幸运的事就是和你相遇</span><br />
+				<span class="space comments"/>我会牵着你的手，走到我们满头白发的那一天<br />
+				<span class="space comments"/>我会守护着你，直至我老去<br />
+				<span class="space comments"/>你的幸福快乐，是我一生的追求<br />
+				<span class="space comments"/>我会每天清晨带着笑脸和你说早安<br />
+				<span class="space comments"/>我会每天夜晚伴着幸福和你一起进入梦乡<br />
+				<span class="space comments"/>我会为我们的未来撑起一片天<br />
+				<span class="space comments"/>为我们的将来担负起一生的责任<br />
+				<span class="space comments"/>我相信我们可以一起，等青丝变白发<br />
+				<span class="space comments"/>我会陪着你闹，看着你笑<br />
+				<span class="space comments"/>你的一颦一蹙都牵动着我每一根神经<br />
+				<span class="space comments"/>你的笑容是我今生最大的守候<br />
+				<span class="space comments"/>我想和你一起看遍这世界<br />
+				<span class="space comments"/>我想和你一起走完这一生<br />
+				<span class="space comments"/>历经生命的点点滴滴<br />
+				<span class="space comments"/>体验人生的繁华与壮丽<br />
+
+				<span class="space comments"/>我能想到最浪漫的事，就是和你一起慢慢变老<br />满载一生的幸福和欢笑</span> <br />
+				<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Miss.Kuang , I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- Mr.Gui</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<audio src="love.mp3"  id="music"  autoplay="autoplay"></audio>
+	<script type="text/javascript">
+        console.log('%c  致旷喻玉小姐  ', 'text-shadow: 3px 1px 1px grey;background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:transparent;-webkit-background-clip: text;font-size:5em;');
+                console.log("%c 当轮月无声地翻过山林", "font-size:20pt");
+                console.log("%c 当奶质的阳光终于流淌", "font-size:20pt");
+                console.log("%c 我依然希望", "font-size:20pt");
+                console.log("%c 你在我每天清晨的开始", "font-size:20pt");
+                console.log("%c 你在我每个睡前的枕边", "font-size:20pt");
+                console.log("%c 我希望", "font-size:20pt");
+                console.log("%c 这样的生活", "font-size:20pt");
+                console.log("%c 直至坟墓的尽头", "font-size:20pt");
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2013, 4, 24);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
